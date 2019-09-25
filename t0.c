@@ -31,14 +31,14 @@ void push(stack_t **stack, unsigned int line_number)
 	n = strtok(NULL, DELIMS);
 	if (n == NULL)
 	{
-		fprintf(stderr,"L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
 	newnode = malloc(sizeof(stack_t));
 	if (newnode == NULL)
 	{
-		fprintf(stderr,"Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 

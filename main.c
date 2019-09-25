@@ -72,7 +72,7 @@ void choose(stack_t **stack, char *op, unsigned int line_num)
 		}
 	if (strlen(op) != 0 && op[0] != '#')
 	{
-		fprintf(stderr,"L%u: unknown instruction %s\n", line_num, op);
+		fprintf(stderr, "L%u: unknown instruction %s\n", line_num, op);
 		exit(EXIT_FAILURE);
 	}
 }
