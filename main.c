@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	if (line)
 		free(line);
 	fclose(fd);
-	atexit(global_free);
+	atexit(freex);
 	exit(EXIT_SUCCESS);
 }
 
@@ -73,10 +73,10 @@ void choose(stack_t **stack, char *op, unsigned int line_num)
 }
 
 /**
- * global_free - global frees memory
+ * freex - global frees memory
  * Return: void
  */
-void global_free(void)
+void freex(void)
 {
 	stack_t *freex = NULL, *aux = NULL;
 
