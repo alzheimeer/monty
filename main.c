@@ -57,6 +57,11 @@ void choose(stack_t **stack, char *op, unsigned int line_num)
 	instruction_t mao[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	for (i = 0; mao[i].opcode; i++)
