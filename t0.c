@@ -29,7 +29,7 @@ void push(stack_t **stack, unsigned int line_number)
 	char *n;
 
 	n = strtok(NULL, DELIMS);
-	if (n == NULL)
+	if (n == NULL || isdigit(*n) == 0)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
