@@ -19,13 +19,13 @@ int main(int argc, char *argv[])
 	global_head = &head;
 	if (argc != 2)
 	{
-		printf("USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	fd = fopen(argv[1], "r");
 	if (!fd)
 	{
-		printf("Error: Can't open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while ((read_line = getline(&line, &len, fd)) != -1)
@@ -67,7 +67,7 @@ void choose(stack_t **stack, char *op, unsigned int line_num)
 		}
 	if (strlen(op) != 0 && op[0] != '#')
 	{
-		printf("L%u: unknown instruction %s\n", line_num, op);
+		fprintf(stderr,"L%u: unknown instruction %s\n", line_num, op);
 		exit(EXIT_FAILURE);
 	}
 }
