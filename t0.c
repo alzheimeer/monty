@@ -28,8 +28,8 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *newnode;
 	char *n;
 
-	n = strtok(NULL, DELIMS);
-	if (n == NULL || isdigit(*n) == 0)
+	n = strtok(NULL, LIM);
+	if (n == NULL || (!isdigit(*n) && *n != '-'))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);

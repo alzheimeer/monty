@@ -10,7 +10,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-#define DELIMS "\n \r\t"
+#define LIM "\n \r\t"
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
