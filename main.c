@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	while ((read_line = getline(&line, &len, fd)) != -1)
 	{
 		command = strtok(line, LIM);
-		if (command[0] == '#')
+		if (command == NULL || command[0] == '#')
 			continue;
 		line_num++;
 		if (command)
