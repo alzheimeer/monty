@@ -27,14 +27,20 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *newnode;
 	char *n;
+	int i;
 
 	n = strtok(NULL, LIM);
 	if (n == NULL || (!isdigit(*n) && *n != '-'))
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);	exit(EXIT_FAILURE);;
 	}
-
+	for (i = 0;n[i] != '\0'; i++)
+	{
+		if (!isdigit(n[i]) && n[i] != '-')
+		{
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);				exit(EXIT_FAILURE);
+		}
+	}
 	newnode = malloc(sizeof(stack_t));
 	if (newnode == NULL)
 	{
