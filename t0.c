@@ -109,28 +109,3 @@ void push(stack_t **stack, unsigned int line_number)
 
 	*stack = newnode;
 }
-/**
- * pqueue - sets the format of the data to a queue (FIFO)
- * @stack:  **pointer to head of the stack
- * @line_number: number of line
- * Return: void
- */
-void pqueue(stack_t **stack, unsigned int line_number)
-{
-	(void)stack;
-	(void)line_number;
-
-}
-
-/**
- * pstack - sets the format fo the data to a stack (LIFO)
- * @stack:  **pointer to head of the stack
- * @line_number: number of line
- * Return: void
- */
-void pstack(stack_t **stack, unsigned int line_number)
-{
-	(void)stack;
-	(void)line_number;
-
-}
