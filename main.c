@@ -12,28 +12,34 @@ int main(int argc, char *argv[])
 	size_t len;
 	ssize_t read_line;
 	unsigned int line_num = 0;
-	char *line = NULL;
+	char *command, *line = NULL;
 	FILE *fd;
-	char *command;
+	int l = 0;
 
 	global_head = &head;
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
+		exit(EXIT_FAILURE); }
 	fd = fopen(argv[1], "r");
 	if (!fd)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
+		exit(EXIT_FAILURE); }
 	while ((read_line = getline(&line, &len, fd)) != -1)
 	{
 		command = strtok(line, LIM);
 		if (command == NULL || command[0] == '#')
 			continue;
 		line_num++;
+		if (strcmp(command, "queue") == 0)
+		{ l = 1;
+			continue; }
+		if (strcmp(command, "stack") == 0)
+		{ l = 0;
+			continue; }
+		if (strcmp(command, "push") == 0 && l == 1)
+			command = "pushc";
 		if (command)
 			choose(&head, command, line_num);
 	}
@@ -50,7 +56,6 @@ int main(int argc, char *argv[])
  * @stack: pointer to the head of the stack
  * @op: command
  * @line_num: number of line
- *
  * Return: void
  */
 void choose(stack_t **stack, char *op, unsigned int line_num)
@@ -59,6 +64,7 @@ void choose(stack_t **stack, char *op, unsigned int line_num)
 	instruction_t mao[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pushc", pushc},
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},

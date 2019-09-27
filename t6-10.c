@@ -25,7 +25,7 @@ void sub(stack_t **stack, unsigned int line_number)
 
 
 /**
- * div - divides the second top element stack
+ * _div - divides the second top element stack
  * @stack: **pointer head of the stack
  * @line_number: number line in file
  * Return: void

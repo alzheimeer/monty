@@ -1,11 +1,17 @@
-# H char code
-push 72
+push 98
+push 96
+push 98
+push 98
+push 98
+push 98
+push 98
+push 98
+push 98
+push 98
+push 98
+push 98
+push 98
+push 58
+pop
 pchar
-
-# invalid char
-# push -1
-# pchar
-
-# invalid char
-push 300
 pchar
