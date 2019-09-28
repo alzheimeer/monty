@@ -29,9 +29,9 @@ int main(int argc, char *argv[])
 	while ((read_line = getline(&line, &len, fd)) != -1)
 	{
 		command = strtok(line, LIM);
+		line_num++;
 		if (command == NULL || command[0] == '#')
 			continue;
-		line_num++;
 		if (strcmp(command, "queue") == 0)
 		{ l = 1;
 			continue; }
